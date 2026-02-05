@@ -10,7 +10,11 @@ Sesuai untuk power user, homelab, VPN, dan mobile broadband setup.
 - **Kelajuan**: ⚡ Sehingga **1Gbps**
 
 ---
-
+login : 192.1681.1
+username : root
+password :
+Wifi: Rumah_5Ghz
+password : 1234567890
 ## ✨ Ciri-ciri Utama
 - 🚀 Prestasi tinggi & stabil
 - 🔐 VPN & tunneling lengkap
