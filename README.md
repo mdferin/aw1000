@@ -59,12 +59,16 @@ Sesuai untuk advanced routing, VPN, passwall setup, dan high-speed networking.
 - 3ginfo-lite
 - luci-app-modemband
 - luci-app-sms-tool-js
+- modeminfo
+- 
 
 ## 🖥️ System Utilities
 - Terminal
 - htop
 - speedtest
 - File Manager
+- Gotop
+- 
 
 ---
 
