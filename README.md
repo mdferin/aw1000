@@ -50,8 +50,8 @@ Sesuai untuk advanced routing, VPN, passwall setup, dan high-speed networking.
 # 📦 Included Packages
 
 ## 🔐 VPN & Network
-- Passwall
-- Passwall2
+- Passwall (Strx Core for umo/mxs no sub/exp)
+- Passwall2 (Strx Core for umo/mxs no sub/exp)
 - Tailscale
 
 ## 📡 Modem & Mobile Broadband
