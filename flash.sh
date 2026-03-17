@@ -38,14 +38,11 @@ echo "   Type    : Sysupgrade image (clean install)"
 echo ""
 
 echo "Downloading firmware..."
-echo "   URL    : $URL"
-echo "   Output : $FILE"
+echo "   ⏳ Downloading... (please wait)"
 echo ""
 
-# Download with progress
-wget -O $FILE $URL 2>&1 | while IFS= read -r line; do
-    echo "   ⏳ $line"
-done
+# Download (quiet mode, hide verbose output)
+wget -q -O $FILE $URL
 
 if [ $? -ne 0 ] || [ ! -s "$FILE" ]; then
     echo "❌ Download failed"
@@ -58,6 +55,13 @@ echo "✅ Download complete."
 SIZE=$(du -h $FILE | cut -f1)
 echo "   Size    : $SIZE"
 echo "   Location: $FILE"
+echo ""
+
+echo "📶 AFTER REBOOT - DEFAULT WIFI:"
+echo "   SSID     : Rumah_5Ghz"
+echo "   Password : 1234567890"
+echo ""
+echo "⚠️  Please write down this WiFi info before flashing!"
 echo ""
 
 while true; do
@@ -80,12 +84,6 @@ while true; do
             echo "🚀 Flashing now... (system will reboot)"
             echo "   Target: Arcadyan AW1000"
             echo "   Firmware: $SIZE"
-            echo ""
-            echo "📶 AFTER REBOOT - DEFAULT WIFI:"
-            echo "   SSID     : Rumah_5Ghz"
-            echo "   Password : 1234567890"
-            echo ""
-            echo "⚠️  Please write down this WiFi info before flashing!"
             echo ""
             sleep 5
             sysupgrade -n $FILE
