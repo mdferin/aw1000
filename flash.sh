@@ -38,15 +38,16 @@ echo "   Type    : Sysupgrade image (clean install)"
 echo ""
 
 echo "Downloading firmware..."
-echo -n "   Progress: "
+echo "   URL    : $URL"
+echo "   Output : $FILE"
+echo ""
 
-# Download with simple progress bar
-wget -O $FILE $URL 2>&1 | grep -o '[0-9]*%' | while read -r pct; do
-    echo -n "$pct "
+# Download with progress
+wget -O $FILE $URL 2>&1 | while IFS= read -r line; do
+    echo "   ⏳ $line"
 done
 
 if [ $? -ne 0 ] || [ ! -s "$FILE" ]; then
-    echo ""
     echo "❌ Download failed"
     rm -f $FILE 2>/dev/null
     exit 1
